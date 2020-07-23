@@ -25,6 +25,7 @@ def main(mypath,outputpath):
     #outputpath='D:/New folder (3)'
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))] 
     for name in onlyfiles [1:]:
+        print(name)
         data1=pd.read_csv(mypath+'/'+name,names=['VehicleID','gpsvalid','lat','lon','timestamp','speed','heading','for_hire_light','engine_acc'])  
         idcar=data1.VehicleID.unique().tolist()
         pool = multiprocessing.Pool(processes=core) 
