@@ -19,8 +19,9 @@ def pocesslocation(data,idcar):
     return out
 
 def main(mypath,outputpath):
-    core=multiprocessing.cpu_count()-2
-    print(core)
+    #core=multiprocessing.cpu_count()-2
+    core=1
+    #print(core)
     #mypath='D:/PROBE-201909'
     #outputpath='D:/New folder (3)'
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))] 
