@@ -3,7 +3,7 @@ import multiprocessing
 import time
 import pandas as pd
 import os 
-from raw_funtion import funtion
+#from raw_funtion import funtion
 from os import listdir
 from os.path import isfile, join 
 from geopy.distance import great_circle
