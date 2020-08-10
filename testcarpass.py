@@ -15,7 +15,7 @@ def checkrama4(lat,lon):
             if great_circle(loref[i],loref[i-1]).meters+100>great_circle((lat,lon),loref[i-1]).meters+great_circle(loref[i],(lat,lon)).meters:
                 logic=True
         except:
-            logic=False
+            print('error')
     return logic
 def main(mypath,outputpath):
     #mypath='D:/PROBE-201909'
