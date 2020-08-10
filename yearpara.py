@@ -3,7 +3,10 @@ import multiprocessing
 import time
 import pandas as pd
 import os 
+<<<<<<< HEAD
 #from raw_funtion import funtion
+=======
+>>>>>>> 0cea1e1232c790d5fe68510fee2d4ea3e494519c
 from os import listdir
 from os.path import isfile, join 
 from geopy.distance import great_circle
@@ -20,13 +23,17 @@ def pocesslocation(data,idcar):
     return out
 
 def main(mypath,outputpath):
+    core=15
+    #core=1
+    #print(core)
     #mypath='D:/PROBE-201909'
     #outputpath='D:/New folder (3)'
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))] 
     for name in onlyfiles [1:]:
+        print(name)
         data1=pd.read_csv(mypath+'/'+name,names=['VehicleID','gpsvalid','lat','lon','timestamp','speed','heading','for_hire_light','engine_acc'])  
         idcar=data1.VehicleID.unique().tolist()
-        pool = multiprocessing.Pool(processes=10) 
+        pool = multiprocessing.Pool(processes=core) 
         func = partial(pocesslocation,data1)
         outputs =pool.map(func,idcar)
         df = pd.DataFrame(outputs, columns =['ids','latstartl','lonstartl', 'latstop','lonstop'])
