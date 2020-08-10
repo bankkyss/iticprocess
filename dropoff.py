@@ -2,8 +2,8 @@ import folium
 import folium.plugins as plugins
 import numpy as np
 import pandas as pd
-mypath='C:/Users/supan/Desktop/test/test'
-#mypath=input('path :')
+#mypath='C:/Users/supan/Desktop/test/test'
+mypath=input('path :')
 out=input('namefileoutput :')
 wat=input('size :')
 opacity=input('opacity :')
