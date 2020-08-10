@@ -21,6 +21,7 @@ alldata['timestart'] = pd.to_datetime(alldata['timestart'])
 alldata['timestopnum'] = alldata['timestop'].dt.hour+alldata['timestop'].dt.minute/60
 alldata['timestartnum'] =alldata['timestart'].dt.hour+alldata['timestart'].dt.minute/60
 start=[0]
+
 while start[-1] < 23.75:
     start.append(start[-1]+15/60)
 final=[]
