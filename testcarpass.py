@@ -11,8 +11,11 @@ def checkrama4(lat,lon):
     loref=[(13.714316,100.592477),(13.712731,100.589730),(13.713065,100.580975),(13.719719,100.565197),(13.718896,100.562440),(13.738243,100.515321)]
     logic=False
     for i in range(1,len(loref)):
-        if great_circle(loref[i],loref[i-1]).meters+100>great_circle((lat,lon),loref[i-1]).meters+great_circle(loref[i],(lat,lon)).meters:
-            logic=True
+        try:
+            if great_circle(loref[i],loref[i-1]).meters+100>great_circle((lat,lon),loref[i-1]).meters+great_circle(loref[i],(lat,lon)).meters:
+                logic=True
+        except:
+            logic=False
     return logic
 def main(mypath,outputpath):
     #mypath='D:/PROBE-201909'
